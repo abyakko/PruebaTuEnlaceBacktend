@@ -1,66 +1,176 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Backend Project - PHP, Laravel, MySQL
 
-## About Laravel
+Este proyecto es una aplicación backend construida con **Laravel** (framework de PHP) y utiliza **MySQL** como base de datos. Proporciona una API que interactúa con los datos de productos y búsquedas, y es consumida por el frontend.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Despliegue en la web
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Puedes revisar el proyecto backend en funcionamiento visitando el siguiente enlace:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+[Ver el backend en la web](https://tusitioweb.com/backend)
 
-## Learning Laravel
+Este enlace te llevará a la versión desplegada de la API.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+También puedes visualizar cómo se integra este backend con el frontend accediendo a la siguiente página, donde podrás ver la interfaz de usuario que consume esta API:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+[Ver la aplicación frontend](https://pruebayuenlacefrontend.vercel.app/)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Ten en cuenta que el segundo botón en el frontend no está completamente funcional debido a una limitación de tiempo para la publicación de la segunda API.
 
-## Laravel Sponsors
+## Tecnologías Utilizadas
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **PHP 8.x**: Lenguaje de programación utilizado en el desarrollo del backend.
+- **Laravel 10**: Framework de PHP que facilita la construcción de aplicaciones web robustas y escalables.
+- **MySQL**: Sistema de gestión de bases de datos relacional utilizado para almacenar datos de productos y búsquedas.
+- **Composer**: Usado como gestor de dependencias para Laravel y PHP.
+- **npm & Vite**: En el frontend, se usaron para empaquetar los archivos y gestionar las dependencias.
+- **Vue Router**: En el frontend se utilizó para la navegación entre páginas.
+- **Axios**: Cliente HTTP utilizado para la comunicación entre el frontend y backend.
 
-### Premium Partners
+## Requisitos Previos
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Antes de comenzar, asegúrate de tener instalado:
 
-## Contributing
+- [PHP 8.x](https://www.php.net/downloads)
+- [Composer](https://getcomposer.org/)
+- [MySQL](https://dev.mysql.com/downloads/installer/)
+- [Node.js y npm](https://nodejs.org/) (para las herramientas del frontend)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Instrucciones de Instalación
 
-## Code of Conduct
+1. Clona el repositorio en tu máquina local:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+git clone https://github.com/usuario/repo-backend.git
+```
 
-## Security Vulnerabilities
+2. Accede al directorio del proyecto:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+cd repo-backend
+```
 
-## License
+3. Instala las dependencias de PHP utilizando Composer:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+composer install
+```
+
+4. Crea un archivo de entorno `.env` copiando el ejemplo provisto:
+
+```bash
+cp .env.example .env
+```
+
+5. Configura tu archivo `.env` con las credenciales de tu base de datos MySQL:
+
+```dotenv
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nombre_base_datos
+DB_USERNAME=tu_usuario
+DB_PASSWORD=tu_contraseña
+```
+
+6. Ejecuta las migraciones para crear las tablas necesarias:
+
+```bash
+php artisan migrate
+```
+
+7. Si deseas popular la base de datos con datos de prueba, puedes ejecutar los seeders:
+
+```bash
+php artisan db:seed
+```
+
+8. Inicia el servidor de desarrollo de Laravel:
+
+```bash
+php artisan serve
+```
+
+9. Ahora, la API estará corriendo en:
+
+```
+http://localhost:8000
+```
+
+## Consulta SQL de Ejemplo
+
+Aquí tienes un ejemplo de una consulta SQL utilizada para obtener los 5 productos más buscados en la base de datos:
+
+```sql
+SELECT products.title, COUNT(searches.id) AS total_searches
+FROM searches
+JOIN products ON searches.product_id = products.id
+GROUP BY products.id, products.title
+ORDER BY total_searches DESC
+LIMIT 5;
+```
+
+Esta consulta te dará los nombres de los productos junto con el número total de búsquedas, ordenados por las más populares.
+
+## Modelo de Base de Datos
+
+El proyecto utiliza una base de datos MySQL con la siguiente estructura de tablas:
+
+1. **products**: Almacena los detalles de los productos.
+   - `id`: Identificador único del producto (PK).
+   - `title`: Nombre del producto.
+   - `description`: Descripción del producto.
+   - `price`: Precio del producto.
+   - `image`: URL de la imagen del producto.
+
+2. **searches**: Registra las búsquedas realizadas por los usuarios.
+   - `id`: Identificador único de la búsqueda (PK).
+   - `search_term`: Término de búsqueda ingresado por el usuario.
+   - `product_id`: Identificador del producto buscado (FK, puede ser null si no coincide con un producto específico).
+   - `created_at`: Fecha y hora en que se realizó la búsqueda.
+
+### Ejemplo de Migración para la Tabla `products`
+
+```php
+Schema::create('products', function (Blueprint $table) {
+    $table->id();
+    $table->string('title');
+    $table->text('description');
+    $table->decimal('price', 8, 2);
+    $table->string('image');
+    $table->timestamps();
+});
+```
+
+### Ejemplo de Migración para la Tabla `searches`
+
+```php
+Schema::create('searches', function (Blueprint $table) {
+    $table->id();
+    $table->string('search_term');
+    $table->foreignId('product_id')->nullable()->constrained('products')->onDelete('set null');
+    $table->timestamps();
+});
+```
+
+## Despliegue para Producción
+
+Para desplegar la aplicación en un servidor de producción:
+
+1. Asegúrate de tener configurado un servidor con PHP y MySQL.
+2. Sube los archivos del proyecto y configura el entorno con el archivo `.env`.
+3. Ejecuta las migraciones en la base de datos de producción.
+4. Usa un servidor como **Apache** o **Nginx** para servir la aplicación.
+
+## Personalización
+
+- **Laravel**: Los endpoints de la API y las rutas se configuran en `routes/api.php`.
+- **MySQL**: La estructura de la base de datos puede ser personalizada con migraciones y seeders que se encuentran en `database/migrations` y `database/seeders`.
+
+## Autor
+
+- **Nombre**: Abraham Perez Nina
+- **Contacto**: +591 67254169
+
+
+SELECT p.id, p.title, COUNT(s.product_id) AS search_count FROM products p JOIN searches s ON p.id = s.product_id GROUP BY p.id, p.title ORDER BY search_count DESC LIMIT 5;
